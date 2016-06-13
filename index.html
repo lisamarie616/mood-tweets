@@ -27,12 +27,49 @@
   <div ng-controller="HomeController as ctrl">
     <div class="container">
       <div class="row">
-        <button ng-click="ctrl.showTweets('puppies')">Show Tweets</button>
-        <div ng-repeat="tweet in ctrl.tweets">
-          {{ tweet.text }}
+
+        <div class="col-sm-4">
+          <h1>I'm feeling...</h1>
+
+          <div class="row">
+
+            <div class="col-md-6">  
+              <div class="panel panel-default" ng-click="ctrl.showTweets('happy')">
+                <div class="panel-body">
+                  Happy
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">  
+              <div class="panel panel-default" ng-click="ctrl.showTweets('sad')">
+                <div class="panel-body">
+                  Sad
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
+
+
+        <div class="col-sm-8">
+
+          <div class="row">
+            <div ng-repeat="tweet in ctrl.tweets | filter: ctrl.photoFilter">
+              <div class="col-md-3 col-sm-4 col-xs-6">
+                <div class="thumbnail">
+                  <img ng-src="{{ tweet.entities.media[0].media_url }}:thumb">
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </div>
   </div>
+
 </body>
 </html>

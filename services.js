@@ -1,4 +1,4 @@
-moodApp.factory('twitterService', ['$q', function($q){
+moodApp.factory('twitterService', function($q){
   var authorizationResult = false;
 
   return {
@@ -9,7 +9,6 @@ moodApp.factory('twitterService', ['$q', function($q){
       });
       authorizationResult = OAuth.create("twitter");
     },
-    
     isReady: function(){
       return authorizationResult;
     },
@@ -29,7 +28,7 @@ moodApp.factory('twitterService', ['$q', function($q){
 
     searchTweets: function(hashtag){
       var deferred = $q.defer();
-      var url = 'https://api.twitter.com/1.1/search/tweets.json?q=%23' + hashtag;
+      var url = 'https://api.twitter.com/1.1/search/tweets.json?q=%23' + hashtag + '+-filter:retweets+AND+filter:images&count=20';
       var promise = authorizationResult.get(url).done(function(data){
         deferred.resolve(data.statuses);
       }).fail(function(err){
@@ -40,4 +39,4 @@ moodApp.factory('twitterService', ['$q', function($q){
 
   }
 
-}])
+})

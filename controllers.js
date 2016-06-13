@@ -1,6 +1,14 @@
 moodApp.controller('HomeController', ['$q','twitterService', function($q, twitterService){
   var ctrl = this;
   ctrl.tweets = [];
+  ctrl.mapMood = {
+    "happy": "cats",
+    "sad": "puppies"
+  }
+
+  ctrl.photoFilter = function(item){
+    return item.entities.media;
+  }
 
   twitterService.initialize();
 
@@ -12,10 +20,10 @@ moodApp.controller('HomeController', ['$q','twitterService', function($q, twitte
     });
   }
 
-  ctrl.showTweets = function(hashtag){
+  ctrl.showTweets = function(mood){
     twitterService.connectTwitter().then(function(){
       if (twitterService.isReady()){
-        ctrl.populateTweets(hashtag);
+        ctrl.populateTweets(ctrl.mapMood[mood]);
       }
     })
   }
