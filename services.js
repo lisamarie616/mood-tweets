@@ -4,6 +4,7 @@ moodApp.factory('twitterService', ['$q', function($q){
   return {
     initialize: function(){
       OAuth.initialize('42Pg7QXC4bSjm7_Mly9g7mGvCU8', {
+        // this is a public key, and therefore publishable on github
         cache: true
       });
       authorizationResult = OAuth.create("twitter");
