@@ -1,9 +1,8 @@
-moodApp.factory('twitterService', function($q){
+moodApp.factory('twitterService', ['$q', function($q){
   var authorizationResult = false;
 
   return {
-    
-    initialize: function() {
+    initialize: function(){
       OAuth.initialize('42Pg7QXC4bSjm7_Mly9g7mGvCU8', {
         cache: true
       });
@@ -13,12 +12,12 @@ moodApp.factory('twitterService', function($q){
       return authorizationResult;
     },
 
-    connectTwitter: function() {
+    connectTwitter: function(){
       var deferred = $q.defer();
       OAuth.popup("twitter", {
         cache: true
-      }, function(error, result) {
-        if (!error) {
+      }, function(error, result){
+        if (!error){
           authorizationResult = result;
           deferred.resolve();
         }
@@ -36,7 +35,5 @@ moodApp.factory('twitterService', function($q){
       });
       return deferred.promise;
     }
-
   }
-
-})
+}]);
