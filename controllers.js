@@ -1,4 +1,4 @@
-moodApp.controller('HomeController', ['$q','twitterService', function($q, twitterService){
+moodApp.controller('HomeController', ['$q','twitterService', '$location', '$anchorScroll', function($q, twitterService, $location, $anchorScroll){
   var ctrl = this;
   ctrl.tweets = [];
   ctrl.mapMood = {
@@ -32,6 +32,18 @@ moodApp.controller('HomeController', ['$q','twitterService', function($q, twitte
         ctrl.populateTweets(ctrl.mapMood[mood]);
       }
     })
+  }
+
+  ctrl.gotoTweets = function(){
+    $location.hash('tweets');
+    $anchorScroll.yOffset = 60;
+    $anchorScroll();
+  }
+
+  ctrl.gotoTop = function(){
+    $location.hash('top');
+    $anchorScroll.yOffset = 60;
+    $anchorScroll();
   }
   
 

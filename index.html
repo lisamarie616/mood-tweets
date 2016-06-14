@@ -28,13 +28,13 @@
     <div class="container">
       <div class="row">
 
-        <div class="col-sm-4">
+        <div class="col-sm-4" id="top">
           <h4>I'm feeling...</h4>
 
           <div class="row">
 
             <div class="col-md-6">
-              <div class="panel panel-default" ng-click="ctrl.showTweets('adventurous')">
+              <div class="panel panel-default" ng-click="ctrl.showTweets('adventurous'); ctrl.gotoTweets()">
                 <div class="panel-body text-center">
                   <img src="images/adventurous.png" alt="adventurous">
                   <p>Adventurous</p>
@@ -43,7 +43,7 @@
             </div>
 
             <div class="col-md-6">
-              <div class="panel panel-default" ng-click="ctrl.showTweets('bored')">
+              <div class="panel panel-default" ng-click="ctrl.showTweets('bored'); ctrl.gotoTweets()">
                 <div class="panel-body text-center">
                   <img src="images/bored.png" alt="bored">
                   <p>Bored</p>
@@ -52,7 +52,7 @@
             </div>
 
             <div class="col-md-6">
-              <div class="panel panel-default" ng-click="ctrl.showTweets('stressed')">
+              <div class="panel panel-default" ng-click="ctrl.showTweets('stressed'); ctrl.gotoTweets()">
                 <div class="panel-body text-center">
                   <img src="images/stressed.png" alt="stressed">
                   <p>Stressed</p>
@@ -61,7 +61,7 @@
             </div>
 
             <div class="col-md-6">
-              <div class="panel panel-default" ng-click="ctrl.showTweets('uninspired')">
+              <div class="panel panel-default" ng-click="ctrl.showTweets('uninspired'); ctrl.gotoTweets()">
                 <div class="panel-body text-center">
                   <img src="images/uninspired.png" alt="uninspired">
                   <p>Uninspired</p>
@@ -70,7 +70,7 @@
             </div>
 
             <div class="col-md-6">
-              <div class="panel panel-default" ng-click="ctrl.showTweets('sad')">
+              <div class="panel panel-default" ng-click="ctrl.showTweets('sad'); ctrl.gotoTweets()">
                 <div class="panel-body text-center">
                   <img src="images/sad.png" alt="sad">
                   <p>Sad</p>
@@ -79,7 +79,7 @@
             </div>
 
             <div class="col-md-6">
-              <div class="panel panel-default" ng-click="ctrl.showTweets('patriotic')">
+              <div class="panel panel-default" ng-click="ctrl.showTweets('patriotic'); ctrl.gotoTweets()">
                 <div class="panel-body text-center">
                   <img src="images/flag.png" alt="flag">
                   <p>Patriotic</p>
@@ -88,7 +88,7 @@
             </div>
 
             <div class="col-md-6">
-              <div class="panel panel-default" ng-click="ctrl.showTweets('anxious')">
+              <div class="panel panel-default" ng-click="ctrl.showTweets('anxious'); ctrl.gotoTweets()">
                 <div class="panel-body text-center">
                   <img src="images/anxious.png" alt="anxious">
                   <p>Anxious</p>
@@ -97,7 +97,7 @@
             </div>
 
             <div class="col-md-6">
-              <div class="panel panel-default" ng-click="ctrl.showTweets('wolflike')">
+              <div class="panel panel-default" ng-click="ctrl.showTweets('wolflike'); ctrl.gotoTweets()">
                 <div class="panel-body text-center">
                   <img src="images/wolf.png" alt="wolf">
                   <p>Wolf-like</p>
@@ -110,6 +110,7 @@
 
 
         <div class="col-sm-8">
+          <div class="tweet-group" id="tweets"></div>
 
           <div class="row">
             <div ng-repeat="tweet in ctrl.tweets | filter: ctrl.photoFilter">
@@ -120,6 +121,7 @@
               </div>
             </div>
           </div>
+          <a ng-if="ctrl.tweets.length > 0" ng-click="ctrl.gotoTop()">Back to top</a>
 
         </div>
 
