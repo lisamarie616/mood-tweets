@@ -2,8 +2,14 @@ moodApp.controller('HomeController', ['$q','twitterService', function($q, twitte
   var ctrl = this;
   ctrl.tweets = [];
   ctrl.mapMood = {
-    "happy": "cats",
-    "sad": "puppies"
+    "stressed": "SunsetMoments",
+    "sad": "puppiesoftwitter",
+    "bored": "CatsOfTwitter",
+    "uninspired": "quotes%20%23motivation",
+    "anxious": "beach%20%23peaceful",
+    "wolflike": "fullmoon%20%23moon",
+    "patriotic": "usa%20%23flag",
+    "adventurous": "waterfall%20%23travel"
   }
 
   ctrl.photoFilter = function(item){
