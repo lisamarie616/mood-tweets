@@ -1,12 +1,25 @@
 body { 
   padding-top: 60px;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Georgia, Verdana, Helvetica, Arial, sans-serif;
 }
 
 .navbar-custom {
-  background-color: #5AC7C4;
+  background-color: #30415d;
 }
 
 .navbar-custom .navbar-brand {
-  color: #162664;
+  color: #fff;
+  font-family: 'Helvetica Neue', Verdana, Arial, sans-serif;
+}
+
+h4 {
+  color:#cf6766;
+}
+
+.panel {
+  background-color: #8eaebd;
+}
+
+.panel-body p {
+  margin: 5px 0 5px;
 }

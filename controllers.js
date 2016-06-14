@@ -5,7 +5,7 @@ moodApp.controller('HomeController', ['$q','twitterService', function($q, twitte
     "stressed": "SunsetMoments",
     "sad": "puppiesoftwitter",
     "bored": "CatsOfTwitter",
-    "uninspired": "quotes%20%23motivation",
+    "uninspired": "quotes%20%23motivational",
     "anxious": "beach%20%23peaceful",
     "wolflike": "fullmoon%20%23moon",
     "patriotic": "usa%20%23flag",
