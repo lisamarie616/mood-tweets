@@ -8,7 +8,7 @@ moodApp.controller('HomeController', ['$q','twitterService', '$location', '$anch
     "bored": "CatsOfTwitter",
     "uninspired": "quotes%20%23motivational",
     "anxious": "beach%20%23peaceful",
-    "wolflike": "fullmoon",
+    "wolflike": "fullmoon%20-%23mooning",
     "patriotic": "usa%20%23flag",
     "adventurous": "waterfall%20%23travel"
   };
